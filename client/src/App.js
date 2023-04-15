@@ -10,7 +10,7 @@ function App() {
 
   const joinRoomHandle =()=>{
     if(username!== "" && room!==""){
-      socket.emit('join_room',room)
+      socket.emit('join_room',room)     //socket.emit is used to send data to the socket but not using http
     }
   }
   return (
