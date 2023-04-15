@@ -17,7 +17,12 @@ const io=new Server(server,{                    //creating the server in socket
 })
 
 io.on('connection',(socket)=>{                  //io.on 'connection'--> event   is when the user using the this website it create one id ...for every connection
-    console.log(socket.id);
+    console.log(`UserId : ${socket.id}`);
+
+    socket.on('join_room',(data)=>{
+        socket.join(data);
+        console.log(`UserId ${socket.id} joined room :${data}`);
+    })
 
     socket.on("disconnect",()=>{                //socket.on 'disconnect' --> event   is delete the id. when the website close.      
         console.log("user Disconnected",socket.id);
