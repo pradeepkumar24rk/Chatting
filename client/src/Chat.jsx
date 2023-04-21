@@ -16,6 +16,7 @@ const Chat = ({socket,room,username}) => {
             
             await socket.emit("send_message",messageData);
             setMessageList((prelist)=>[...prelist,messageData])
+            setCurrentMessage('');
         }
     }
 
@@ -30,7 +31,7 @@ const Chat = ({socket,room,username}) => {
     <div className='chat-window'>
 
         <div className='chat-header'>
-            <p>Live chat</p>
+            <p>Live chat in {room}</p>
         </div>
 
         <div className='chat-body'>
