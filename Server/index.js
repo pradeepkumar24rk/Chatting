@@ -10,7 +10,7 @@ const server=http.createServer(app);
 
 const io=new Server(server,{                    //creating the server in socket
     cors: {                                     //it helps to solve the error in connection and operation.
-        origin:'https://teamchat24rk.netlify.app/',
+        origin:'http://localhost:3000',
         methods:['GET','POST']
     }
 })
