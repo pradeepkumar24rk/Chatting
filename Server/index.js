@@ -10,7 +10,7 @@ const server=http.createServer(app);
 
 const io=new Server(server,{                    //creating the server in socket
     cors: {                                     //it helps to solve the error in connection and operation.
-        origin:'http://localhost:3000',
+        origin:'*',
         methods:['GET','POST']
     }
 })
